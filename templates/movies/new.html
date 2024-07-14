@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+{% block title%} 
+    New Movie
+{% endblock %}
+
+{% block navbar %} 
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block content %} 
+    <div class="container">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <strong>{{ form.name.label()}}</strong>
+            {{ form.name(class="form-control", placeholder="Name...")}}
+            <br>
+            <strong>{{ form.plot.label()}}</strong>
+            {{ form.plot(class="form-control", placeholder="Plot...")}}
+            <br>
+            <strong>{{ form.genre.label()}}</strong>
+            {{ form.genre(class="form-control", placeholder="genre...")}}
+            <br>
+            {{ form.submit(class="btn btn-warning")}}
+            
+        </form>
+    </div>
+{% endblock %}
